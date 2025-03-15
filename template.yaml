@@ -9,6 +9,7 @@ Resources:
       Runtime: nodejs22.x
       MemorySize: 128
       Timeout: 30
+      CodeUri: ./dist
       Environment:
         Variables:
           SES_EMAIL: ${SES_EMAIL}

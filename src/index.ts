@@ -11,7 +11,7 @@ export const handler = async () => {
     const weatherData = await fetchWeather(LATITUDE, LONGITUDE);
     await saveRecord(weatherData);
 
-    if (!checkWeather(weatherData)) {
+    if (process.env.FORCE_SEND_EMAIL ?? checkWeather(weatherData)) {
         await sendAlert(ALERT_EMAIL, weatherData);
     }
 };
