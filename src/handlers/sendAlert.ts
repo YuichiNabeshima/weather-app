@@ -9,7 +9,7 @@ export const sendAlert = async (email: string, weatherData: any) => {
             Body: { Text: { Data: `⚠️ Weather Alert: ${JSON.stringify(weatherData)}` }},
             Subject: { Data: "⚠️ Severe Weather Alert!" },
         },
-        Source: "yuichi.nabeshima0243@mycanctb.ca",
+        Source: process.env.SES_EMAIL,
     };
 
     await ses.send(new SendEmailCommand(params));

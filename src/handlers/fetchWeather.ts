@@ -6,5 +6,3 @@ export const fetchWeather = async (latitude: number, longitude: number) => {
     const response = await axios.get(url);
     return response.data.current_weather;
 };
-
-fetchWeather(35.6895, 139.6917);
